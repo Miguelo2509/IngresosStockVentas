@@ -11,9 +11,7 @@ Necesito:
 - Stock Comercial al Inicio.
 
 Formato:
-Ingresos UN	Stock Comerial UN	Venta UN	Operación UN	Ingresos $	Stock Comerial $	Venta $	Operación $
 
-| ----------- | ----------- | ----------- | ----------- | ----------- |----------- |----------- |----------- |----------- |
 | Fecha | Ingresos UN | Stock Comerial UN | Venta UN | Operación UN | Ingresos $ | Stock Comerial $ | Venta $ | Operación $|
 | ----------- | ----------- | ----------- | ----------- | ----------- |----------- |----------- |----------- |----------- |
 
