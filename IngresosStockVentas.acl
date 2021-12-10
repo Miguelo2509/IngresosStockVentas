@@ -17,6 +17,147 @@
 
 
 
+
+
+^LAYOUT   Datos                                                               868 D,T.
+Usu_Legacy     ASCII       1  50    
+Cl_Legacy      ASCII      52  50    
+Usu_SAP        ASCII     103  50    
+Cl_SAP         ASCII     154  50    
+Usu_REPO       ASCII     205  50    
+Cl_REPO        ASCII     256  50    
+megatone       ASCII     307  50    
+confina        ASCII     358  50    
+base_megatone  ASCII     409  50    
+base_corefin   ASCII     460  50    
+clientes_megatone ASCII     511  50    
+clientes_corefin ASCII     562  50    
+proveedores    ASCII     613  50    
+musimundo      ASCII     664  50    
+clientes_unificado ASCII     715  50    
+interfaz_sap   ASCII     766  50    
+reposar        ASCII     817  50    
+^LAYOUT   SituacionGeneralStock                                               249 D,T.
+Zona           ASCII       1   6    
+Centro         ASCII       7   4    
+Nombre         ASCII      11  30    
+Tipo           ASCII      41   1    
+Material       PRINT      42   6 0  
+Descripcion    ASCII      48  40    
+TipoMat        ASCII      88   4    
+Rubro          ASCII      92   3    
+RubroDesc      ASCII      95  23    
+SubRubro       ASCII     118   6    
+SubRubroDesc   ASCII     124  39    
+Grupo          ASCII     163   9    
+GrupoDesc      ASCII     172  20    
+Almacen        ASCII     192   4    
+LibreUtil      PRINT     196   4 0  
+Bloqueado      PRINT     200   3 0  
+CtrlCalidad    PRINT     203   1 0  
+Transito       PRINT     204   2 0  
+Traslado       PRINT     206   2 0  
+EntPendACentro PRINT     208   3 0  
+TransYTrasDeAlmOrig PRINT     211   2 0  
+EntPendCliInt  PRINT     213   3 0  
+EntPendCliExt  PRINT     216   2 0  
+EntPendTot     PRINT     218   3 0  
+DisponibleVtaCentro PRINT     221   3 0  
+DisponibleVtaEmpresa PRINT     224   4 0  
+DisponibleAlmCentro PRINT     228   4 0  
+DisponibleAlmEmpresa PRINT     232   4 0  
+IngPlanifAntes30Dias PRINT     236   5 0  
+IngPlanifUlt30Dias PRINT     241   3 0  
+IngPlanifProx30Dias PRINT     244   3 0  
+IngPlanifDesp30Dias PRINT     247   3 0  
+StockComercial COMPUTED             ""
+ *N 0 2
+ LibreUtil + EntPendACentro + TransYTrasDeAlmOrig - EntPendTot IF Almacen = "0001"
+ 0
+^LAYOUT   Movimientos                                                         0 D,T.
+^LAYOUT   Movimientos                                                         745 D,T.
+MKPF_MBLNR     ASCII       1  10   AS "Cabecera de doc.artículo;Número de documento artículo"  
+MKPF_MJAHR     ASCII      11   4   AS "Cabecera de doc.artículo;Ejercicio del documento de artículo"  
+MKPF_VGART     ASCII      15   2   AS "Cabecera de doc.artículo;Clase de operación"  
+MKPF_BLART     ASCII      17   2   AS "Cabecera de doc.artículo;Clase de documento"  
+MKPF_BLAUM     ASCII      19   2   AS "Cabecera de doc.artículo;Clase de documento del documento de revaloración"  
+MKPF_BLDAT     DATETIME   21   8   PICTURE "YYYYMMDD" AS "Cabecera de doc.artículo;Fecha de documento en documento"  
+MKPF_BUDAT     ASCII      29   8   AS "Cabecera de doc.artículo;Fecha de contabilización en el documento"  
+MKPF_CPUDT     ASCII      37   8   AS "Cabecera de doc.artículo;Día del registro del documento contable"  
+MKPF_CPUTM     ASCII      45   6   AS "Cabecera de doc.artículo;Hora de entrada"  
+MKPF_AEDAT     ASCII      51   8   AS "Cabecera de doc.artículo;Fecha última modificación"  
+MKPF_USNAM     ASCII      59  12   AS "Cabecera de doc.artículo;Nombre del usuario"  
+MKPF_TCODE     ASCII      71   4   AS "Cabecera de doc.artículo;Ámbito no definido , posiblemente para niveles patch"  
+MKPF_XBLNR     ASCII      75  16   AS "Cabecera de doc.artículo;Número de documento de referencia"  
+MKPF_BKTXT     ASCII      91  25   AS "Cabecera de doc.artículo;Texto de cabecera de documento"  
+MKPF_XABLN     ASCII     116  10   AS "Cabecera de doc.artículo;Nº vale de acompañamiento mercancías"  
+MSEG_ZEILE     ASCII     126   4   AS "Segmento doc.material;Posición en documento de artículo"  
+MSEG_LINE_ID   ASCII     130   6   AS "Segmento doc.material;Identificación unívoca de la posición de documento"  
+MSEG_PARENT_ID ASCII     136   6   AS "Segmento doc.material;Identificación de las líneas inmediatamente supraordenadas"  
+MSEG_LINE_DEPTH ASCII     142   2   AS "Segmento doc.material;Nivel jerárquico de la línea en el documento"  
+MSEG_MAA_URZEI ASCII     144   4   AS "Segmento doc.material;Línea original para líneas de imputación en doc.artículo"  
+MSEG_BWART     ASCII     148   3   AS "Segmento doc.material;Clase de movimiento (gestión stocks)"  
+MSEG_XAUTO     ASCII     151   1   AS "Segmento doc.material;Posición creada automáticamente"  
+MSEG_MATNR     ASCII     152  18   AS "Segmento doc.material;Número de artículo"  
+MSEG_WERKS     ASCII     170   4   AS "Segmento doc.material;Centro"  
+MSEG_LGORT     ASCII     174   4   AS "Segmento doc.material;Almacén"  
+MSEG_CHARG     ASCII     178  10   AS "Segmento doc.material;Número de lote"  
+MSEG_INSMK     ASCII     188   1   AS "Segmento doc.material;Tipo stock"  
+MSEG_SOBKZ     ASCII     189   1   AS "Segmento doc.material;Indicador de stock especial"  
+MSEG_LIFNR     ASCII     190  10   AS "Segmento doc.material;Número de cuenta del proveedor"  
+MSEG_KUNNR     ASCII     200  10   AS "Segmento doc.material;Número de cuenta del cliente"  
+MSEG_KDAUF     ASCII     210  10   AS "Segmento doc.material;Número del pedido de cliente"  
+MSEG_KDPOS     ASCII     220   6   AS "Segmento doc.material;Número de posición en el pedido de cliente"  
+MSEG_KDEIN     ASCII     226   4   AS "Segmento doc.material;Reparto pedido de cliente"  
+MSEG_SHKZG     ASCII     230   1   AS "Segmento doc.material;Indicador debe/haber"  
+MSEG_WAERS     ASCII     231   5   AS "Segmento doc.material;Clave de moneda"  
+MSEG_DMBTR     PRINT     236  16 2 AS "Segmento doc.material;Importe en moneda local"  
+MSEG_BWTAR     ASCII     252  10   AS "Segmento doc.material;Clase de valoración"  
+MSEG_MENGE     NUMERIC   262  17 3 AS "Segmento doc.material;Cantidad"  
+MSEG_MEINS     ASCII     279   3   AS "Segmento doc.material;Unidad de medida base"  
+MSEG_ERFMG     NUMERIC   282  17 3 AS "Segmento doc.material;Cantidad en unidad de medida de entrada"  
+MSEG_ERFME     ASCII     299   3   AS "Segmento doc.material;Unidad de medida de entrada"  
+MSEG_BPMNG     NUMERIC   302  17 3 AS "Segmento doc.material;Cantidad en unidad de medida de precio de pedido"  
+MSEG_BPRME     ASCII     319   3   AS "Segmento doc.material;Unidad medida de precio de pedido"  
+MSEG_EBELN     ASCII     322  10   AS "Segmento doc.material;Número de pedido"  
+MSEG_EBELP     ASCII     332   5   AS "Segmento doc.material;Número de posición del documento de compras"  
+MSEG_KOKRS     ASCII     337   4   AS "Segmento doc.material;Sociedad CO"  
+MSEG_KOSTL     ASCII     341  10   AS "Segmento doc.material;Centro de coste"  
+MSEG_AUFNR     ASCII     351  12   AS "Segmento doc.material;Número de orden"  
+MSEG_ANLN1     ASCII     363  12   AS "Segmento doc.material;Número principal de activo fijo"  
+MSEG_ANLN2     ASCII     375   4   AS "Segmento doc.material;Subnúmero de activo fijo"  
+MSEG_GJAHR     ASCII     379   4   AS "Segmento doc.material;Ejercicio"  
+MSEG_BUKRS     ASCII     383   4   AS "Segmento doc.material;Sociedad"  
+MSEG_RSNUM     ASCII     387  10   AS "Segmento doc.material;Número de la reserva/las necesidades secundarias"  
+MSEG_RSPOS     ASCII     397   4   AS "Segmento doc.material;Número de posición de reserva/necesidades secundarias"  
+MSEG_KZBEW     ASCII     401   1   AS "Segmento doc.material;Indicador de movimiento"  
+MSEG_KZVBR     ASCII     402   1   AS "Segmento doc.material;Contabilización de consumo"  
+MSEG_KZZUG     ASCII     403   1   AS "Segmento doc.material;Indicador de entrada"  
+MSEG_GRUND     ASCII     404   4   AS "Segmento doc.material;Motivo del movimiento"  
+MSEG_PS_PSP_PNR ASCII     408  24   AS "Segmento doc.material;Elemento del plan de estructura de proyecto (elemento PEP)"  
+MSEG_NPLNR     ASCII     432  12   AS "Segmento doc.material;Número de grafo para imputación"  
+MSEG_AUFPL     ASCII     444  10   AS "Segmento doc.material;Nº hoja ruta de operaciones en orden"  
+MSEG_APLZL     ASCII     454   8   AS "Segmento doc.material;Contador interno"  
+MSEG_BSTMG     NUMERIC   462  17 3 AS "Segmento doc.material;Cantidad entrada de mercancías en unidad de medida de pedido"  
+MSEG_BSTME     ASCII     479   3   AS "Segmento doc.material;Unidad de medida de pedido"  
+MSEG_EXBWR     PRINT     482  16 2 AS "Segmento doc.material;Importe de contab.introducido externamente en moneda local"  
+MSEG_VKWRT     PRINT     498  16 2 AS "Segmento doc.material;Valor p.precios de venta con IVA"  
+MSEG_EXVKW     PRINT     514  16 2 AS "Segmento doc.material;Valor de venta introducido externamente en moneda local"  
+MSEG_LBKUM     NUMERIC   530  18 3 AS "Segmento doc.material;Stock total valorado antes de la contabilización"  
+MSEG_SALK3     PRINT     548  18 2 AS "Segmento doc.material;Valor del stock total valorado antes de la contabilización"  
+MSEG_VPRSV     ASCII     566   1   AS "Segmento doc.material;Indicador de control de precios"  
+MSEG_MAT_KDAUF ASCII     567  10   AS "Segmento doc.material;Número pedido cliente de stock para pedido cliente valorado"  
+MSEG_MAT_KDPOS ASCII     577   6   AS "Segmento doc.material;Posición pedido cliente de stock p.pedido cliente valorado"  
+MSEG_XMACC     ASCII     583   1   AS "Segmento doc.material;Imputación múltiple"  
+MSEG_WRF_CHARSTC1 ASCII     584  18   AS "Segmento doc.material;Characteristic Value 1"  
+MSEG_WRF_CHARSTC2 ASCII     602  18   AS "Segmento doc.material;Characteristic Value 2"  
+MSEG_WRF_CHARSTC3 ASCII     620  18   AS "Segmento doc.material;Characteristic Value 3"  
+MARA_MATNR     ASCII     638  18   AS "Datos generales artículo;Número de artículo"  
+MARA_MTART     ASCII     656   4   AS "Datos generales artículo;Tipo de artículo"  
+MARA_MATKL     ASCII     660   9   AS "Datos generales artículo;Grupo de artículos"  
+MARA_VOLUM     NUMERIC   669  17 3 AS "Datos generales artículo;Volumen"  
+MAKT_MATNR     ASCII     686  18   AS "Textos breves de artículo;Número de artículo"  
+MAKT_MAKTX     ASCII     704  40   AS "Textos breves de artículo;Texto breve de artículo"  
 ^FOLDER   Tablas                                                               1593534508
 [PARENT_FOLDER_ID] 0
 ^FOLDER   Scripts                                                              1593534819
@@ -608,9 +749,124 @@ vLineas2 = 0
 SET SAFETY ON
 
 
+^BATCH    S040_CostoVenta                                                     
+[PARENT_FOLDER_ID] 1593534819
+
+OPEN Costo
+DELETE FIELD Tipo OK
+DEFINE FIELD Tipo COMPUTED "Costo"
+
+OPEN Venta
+DELETE FIELD Tipo OK
+DEFINE FIELD Tipo COMPUTED "Venta"
+
+OPEN IngresosEgresosTmp2
+OPEN Costo SECONDARY
+JOIN PKEY MSEG_MATNR FIELDS MKPF_MBLNR MKPF_MJAHR MKPF_VGART MKPF_BLDAT MKPF_BUDAT MKPF_CPUDT MKPF_USNAM MKPF_XBLNR MKPF_LE_VBELN MSEG_MBLNR MSEG_MJAHR MSEG_ZEILE MSEG_LINE_ID MSEG_BWART MSEG_MATNR MSEG_WERKS MSEG_LGORT MSEG_LIFNR MSEG_DMBTR MSEG_MENGE MSEG_EBELN MSEG_EBELP MSEG_GJAHR MSEG_BUKRS MSEG_BSTMG EKPO_EBELN EKPO_EBELP EKPO_MATNR EKPO_TXZ01 EKPO_WERKS EKPO_MENGE EKPO_MTART EKKO_EBELN EKKO_BUKRS EKKO_BSTYP EKKO_BSART EKKO_AEDAT EKKO_LIFNR MARA_MATNR MARA_MTART MARA_BRAND_ID MARA_MATKL MARA_VOLUM LFA1_LIFNR LFA1_NAME1 SKEY A073_MATNR WITH A073_MATNR A073_KNUMH A073_DATAB A073_DATBI KONP_KBETR Articulo Tipo TO "JoinIngresosEgresosCosto" OPEN PRESORT MANY SECSORT
+
+CLOSE SECONDARY
+OPEN JoinIngresosEgresosCosto
+
+DELETE FIELD ValorCosto OK
+DEFINE FIELD ValorCosto COMPUTED
+""
+DEC(KONP_KBETR/100;2) IF BETWEEN(MKPF_CPUDT; A073_DATAB; A073_DATBI)  
+0,00
+
+EXTRACT FIELDS MKPF_MBLNR MKPF_MJAHR MKPF_VGART MKPF_BLDAT MKPF_BUDAT MKPF_CPUDT MKPF_USNAM MKPF_XBLNR MKPF_LE_VBELN MSEG_MBLNR MSEG_MJAHR MSEG_ZEILE MSEG_LINE_ID MSEG_BWART MSEG_MATNR MSEG_WERKS MSEG_LGORT MSEG_LIFNR MSEG_DMBTR MSEG_MENGE MSEG_EBELN MSEG_EBELP MSEG_GJAHR MSEG_BUKRS MSEG_BSTMG EKPO_EBELN EKPO_EBELP EKPO_MATNR EKPO_TXZ01 EKPO_WERKS EKPO_MENGE EKPO_MTART EKKO_EBELN EKKO_BUKRS EKKO_BSTYP EKKO_BSART EKKO_AEDAT EKKO_LIFNR MARA_MATNR MARA_MTART MARA_BRAND_ID MARA_MATKL MARA_VOLUM LFA1_LIFNR LFA1_NAME1 ValorCosto IF ValorCosto <> 0,00 TO "IngresosEgresosCosto"
+
+OPEN IngresosEgresosCosto
+OPEN Venta SECONDARY
+JOIN PKEY MSEG_MATNR FIELDS MKPF_MBLNR MKPF_MJAHR MKPF_VGART MKPF_BLDAT MKPF_BUDAT MKPF_CPUDT MKPF_USNAM MKPF_XBLNR MKPF_LE_VBELN MSEG_MBLNR MSEG_MJAHR MSEG_ZEILE MSEG_LINE_ID MSEG_BWART MSEG_MATNR MSEG_WERKS MSEG_LGORT MSEG_LIFNR MSEG_DMBTR MSEG_MENGE MSEG_EBELN MSEG_EBELP MSEG_GJAHR MSEG_BUKRS MSEG_BSTMG EKPO_EBELN EKPO_EBELP EKPO_MATNR EKPO_TXZ01 EKPO_WERKS EKPO_MENGE EKPO_MTART EKKO_EBELN EKKO_BUKRS EKKO_BSTYP EKKO_BSART EKKO_AEDAT EKKO_LIFNR MARA_MATNR MARA_MTART MARA_BRAND_ID MARA_MATKL MARA_VOLUM LFA1_LIFNR LFA1_NAME1  ValorCosto SKEY A073_MATNR WITH A073_MATNR A073_KNUMH A073_DATAB A073_DATBI KONP_KBETR Articulo Tipo TO "JoinIngresosEgresosVenta" OPEN PRESORT MANY SECSORT
+
+CLOSE SECONDARY
+OPEN JoinIngresosEgresosVenta
+
+DELETE FIELD ValorVenta OK
+DEFINE FIELD ValorVenta COMPUTED
+""
+DEC(KONP_KBETR/100;2) IF BETWEEN(MKPF_CPUDT; A073_DATAB; A073_DATBI)  
+0,00
+
+EXTRACT FIELDS MKPF_MBLNR MKPF_MJAHR MKPF_VGART MKPF_BLDAT MKPF_BUDAT MKPF_CPUDT MKPF_USNAM MKPF_XBLNR MKPF_LE_VBELN MSEG_MBLNR MSEG_MJAHR MSEG_ZEILE MSEG_LINE_ID MSEG_BWART MSEG_MATNR MSEG_WERKS MSEG_LGORT MSEG_LIFNR MSEG_DMBTR MSEG_MENGE MSEG_EBELN MSEG_EBELP MSEG_GJAHR MSEG_BUKRS MSEG_BSTMG EKPO_EBELN EKPO_EBELP EKPO_MATNR EKPO_TXZ01 EKPO_WERKS EKPO_MENGE EKPO_MTART EKKO_EBELN EKKO_BUKRS EKKO_BSTYP EKKO_BSART EKKO_AEDAT EKKO_LIFNR MARA_MATNR MARA_MTART MARA_BRAND_ID MARA_MATKL MARA_VOLUM LFA1_LIFNR LFA1_NAME1 ValorCosto ValorVenta IF ValorVenta <> 0,00 TO "IngresosEgresos"
+
+OPEN IngresosEgresos
+
+
+^LOGFILE  IngresosStockVentas                                                                                                                                                                                                                                                  "" "IngresosStockVentas.LOG"
+[PARENT_FOLDER_ID] 0
+^BATCH    S000_Local                                                          
+[PARENT_FOLDER_ID] 1593534819
+SET SAFETY OFF
+
+SET FOLDER /Tablas
+
+IMPORT ODBC SOURCE "Excel Files" TABLE "Datos$" QUALIFIER "F:\Mis Documentos\AUDITORIA OPERATIVA\SCRIPT\Biblioteca AX\Datos.xls" TO "Datos.FIL" WIDTH 50 MAXIMUM 100 FIELDS "Usu_Legacy","Cl_Legacy","Usu_SAP","Cl_SAP","Usu_REPO","Cl_REPO","megatone","confina","base_megatone","base_corefin","clientes_megatone","clientes_corefin","proveedores","musimundo","clientes_unificado","interfaz_sap","reposar"
+
+DO S010_Inicializar 
+DO S020_Importar 
+DO S030_Preparar 
+
+
+DO S040_IngresosAcumulados
+
+DO S050_IngresosDiaAnterior 
+DO S060_IngresosDetallado 
+DO S070_ResumenProv 
+DO S080_ResumenRubro
+DO S100_ArmarReporte
+
+SET SAFETY ON
+^BATCH    S000_AX                                                             
+[PARENT_FOLDER_ID] 1593534819
+COMMENT
+//ANALYTIC ReporteIngresosStockVentas
+//RESULT LOG
+//RESULT TABLE 
+//RESULT FILE *.XLSX
+END
+
+SET SAFETY OFF
+
+SET FOLDER /Tablas
+
+DO S010_Inicializar 
+DO S020_Importar 
+DO S030_Preparar 
+DO S040_IngresosAcumulados 
+DO S050_IngresosDiaAnterior 
+DO S060_IngresosDetallado 
+DO S070_ResumenProv 
+DO S080_ResumenRubro
+DO S100_ArmarReporte
+
+
+SET SAFETY ON
 ^BATCH    S030_Preparar                                                       
 [PARENT_FOLDER_ID] 1593534819
 SET SAFETY OFF
+
+
+COMM
+------------------------------SituacionGeneralStock
+
+OPEN SituacionGeneralStock
+
+COMM
+Stock Comercial = Libre Utilización + Pendiente a Centro + Transito y Traslado - Pendiente Desde Centro
+
+DELETE FIELD StockComercial OK
+DEFINE FIELD StockComercial COMPUTED 
+""
+LibreUtil + EntPendACentro + TransYTrasDeAlmOrig - EntPendTot IF Almacen = "0001"
+0
+
+
+
+
+
+
+
 
 COMM 
 ------------------------------ProveedorRegular
@@ -778,87 +1034,340 @@ DEFINE FIELD Clave COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo) + "-" + DA
 INDEX ON Clave TO "IxEgresosClave"
 
 SET SAFETY ON
-^BATCH    S040_CostoVenta                                                     
-[PARENT_FOLDER_ID] 1593534819
-
-OPEN Costo
-DELETE FIELD Tipo OK
-DEFINE FIELD Tipo COMPUTED "Costo"
-
-OPEN Venta
-DELETE FIELD Tipo OK
-DEFINE FIELD Tipo COMPUTED "Venta"
-
-OPEN IngresosEgresosTmp2
-OPEN Costo SECONDARY
-JOIN PKEY MSEG_MATNR FIELDS MKPF_MBLNR MKPF_MJAHR MKPF_VGART MKPF_BLDAT MKPF_BUDAT MKPF_CPUDT MKPF_USNAM MKPF_XBLNR MKPF_LE_VBELN MSEG_MBLNR MSEG_MJAHR MSEG_ZEILE MSEG_LINE_ID MSEG_BWART MSEG_MATNR MSEG_WERKS MSEG_LGORT MSEG_LIFNR MSEG_DMBTR MSEG_MENGE MSEG_EBELN MSEG_EBELP MSEG_GJAHR MSEG_BUKRS MSEG_BSTMG EKPO_EBELN EKPO_EBELP EKPO_MATNR EKPO_TXZ01 EKPO_WERKS EKPO_MENGE EKPO_MTART EKKO_EBELN EKKO_BUKRS EKKO_BSTYP EKKO_BSART EKKO_AEDAT EKKO_LIFNR MARA_MATNR MARA_MTART MARA_BRAND_ID MARA_MATKL MARA_VOLUM LFA1_LIFNR LFA1_NAME1 SKEY A073_MATNR WITH A073_MATNR A073_KNUMH A073_DATAB A073_DATBI KONP_KBETR Articulo Tipo TO "JoinIngresosEgresosCosto" OPEN PRESORT MANY SECSORT
-
-CLOSE SECONDARY
-OPEN JoinIngresosEgresosCosto
-
-DELETE FIELD ValorCosto OK
-DEFINE FIELD ValorCosto COMPUTED
-""
-DEC(KONP_KBETR/100;2) IF BETWEEN(MKPF_CPUDT; A073_DATAB; A073_DATBI)  
-0,00
-
-EXTRACT FIELDS MKPF_MBLNR MKPF_MJAHR MKPF_VGART MKPF_BLDAT MKPF_BUDAT MKPF_CPUDT MKPF_USNAM MKPF_XBLNR MKPF_LE_VBELN MSEG_MBLNR MSEG_MJAHR MSEG_ZEILE MSEG_LINE_ID MSEG_BWART MSEG_MATNR MSEG_WERKS MSEG_LGORT MSEG_LIFNR MSEG_DMBTR MSEG_MENGE MSEG_EBELN MSEG_EBELP MSEG_GJAHR MSEG_BUKRS MSEG_BSTMG EKPO_EBELN EKPO_EBELP EKPO_MATNR EKPO_TXZ01 EKPO_WERKS EKPO_MENGE EKPO_MTART EKKO_EBELN EKKO_BUKRS EKKO_BSTYP EKKO_BSART EKKO_AEDAT EKKO_LIFNR MARA_MATNR MARA_MTART MARA_BRAND_ID MARA_MATKL MARA_VOLUM LFA1_LIFNR LFA1_NAME1 ValorCosto IF ValorCosto <> 0,00 TO "IngresosEgresosCosto"
-
-OPEN IngresosEgresosCosto
-OPEN Venta SECONDARY
-JOIN PKEY MSEG_MATNR FIELDS MKPF_MBLNR MKPF_MJAHR MKPF_VGART MKPF_BLDAT MKPF_BUDAT MKPF_CPUDT MKPF_USNAM MKPF_XBLNR MKPF_LE_VBELN MSEG_MBLNR MSEG_MJAHR MSEG_ZEILE MSEG_LINE_ID MSEG_BWART MSEG_MATNR MSEG_WERKS MSEG_LGORT MSEG_LIFNR MSEG_DMBTR MSEG_MENGE MSEG_EBELN MSEG_EBELP MSEG_GJAHR MSEG_BUKRS MSEG_BSTMG EKPO_EBELN EKPO_EBELP EKPO_MATNR EKPO_TXZ01 EKPO_WERKS EKPO_MENGE EKPO_MTART EKKO_EBELN EKKO_BUKRS EKKO_BSTYP EKKO_BSART EKKO_AEDAT EKKO_LIFNR MARA_MATNR MARA_MTART MARA_BRAND_ID MARA_MATKL MARA_VOLUM LFA1_LIFNR LFA1_NAME1  ValorCosto SKEY A073_MATNR WITH A073_MATNR A073_KNUMH A073_DATAB A073_DATBI KONP_KBETR Articulo Tipo TO "JoinIngresosEgresosVenta" OPEN PRESORT MANY SECSORT
-
-CLOSE SECONDARY
-OPEN JoinIngresosEgresosVenta
-
-DELETE FIELD ValorVenta OK
-DEFINE FIELD ValorVenta COMPUTED
-""
-DEC(KONP_KBETR/100;2) IF BETWEEN(MKPF_CPUDT; A073_DATAB; A073_DATBI)  
-0,00
-
-EXTRACT FIELDS MKPF_MBLNR MKPF_MJAHR MKPF_VGART MKPF_BLDAT MKPF_BUDAT MKPF_CPUDT MKPF_USNAM MKPF_XBLNR MKPF_LE_VBELN MSEG_MBLNR MSEG_MJAHR MSEG_ZEILE MSEG_LINE_ID MSEG_BWART MSEG_MATNR MSEG_WERKS MSEG_LGORT MSEG_LIFNR MSEG_DMBTR MSEG_MENGE MSEG_EBELN MSEG_EBELP MSEG_GJAHR MSEG_BUKRS MSEG_BSTMG EKPO_EBELN EKPO_EBELP EKPO_MATNR EKPO_TXZ01 EKPO_WERKS EKPO_MENGE EKPO_MTART EKKO_EBELN EKKO_BUKRS EKKO_BSTYP EKKO_BSART EKKO_AEDAT EKKO_LIFNR MARA_MATNR MARA_MTART MARA_BRAND_ID MARA_MATKL MARA_VOLUM LFA1_LIFNR LFA1_NAME1 ValorCosto ValorVenta IF ValorVenta <> 0,00 TO "IngresosEgresos"
-
-OPEN IngresosEgresos
-
-
-^LOGFILE  IngresosStockVentas                                                                                                                                                                                                                                                  "" "IngresosStockVentas.LOG"
-[PARENT_FOLDER_ID] 0
-^BATCH    S000_Local                                                          
-[PARENT_FOLDER_ID] 1593534819
-SET SAFETY OFF
-
-SET FOLDER /Tablas
-
-IMPORT ODBC SOURCE "Excel Files" TABLE "Datos$" QUALIFIER "F:\Mis Documentos\AUDITORIA OPERATIVA\SCRIPT\Biblioteca AX\Datos.xls" TO "Datos.FIL" WIDTH 50 MAXIMUM 100 FIELDS "Usu_Legacy","Cl_Legacy","Usu_SAP","Cl_SAP","Usu_REPO","Cl_REPO","megatone","confina","base_megatone","base_corefin","clientes_megatone","clientes_corefin","proveedores","musimundo","clientes_unificado","interfaz_sap","reposar"
-
-DO S010_Inicializar 
-DO S020_Importar 
-DO S030_Preparar 
-
-
-DO S040_IngresosAcumulados
-
-DO S050_IngresosDiaAnterior 
-DO S060_IngresosDetallado 
-DO S070_ResumenProv 
-DO S080_ResumenRubro
-DO S100_ArmarReporte
-
-SET SAFETY ON
+^REPORT   Vista_predeterminada                                                SituacionGeneralStock                                             D,T.
+[SKIP] 0
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+Zona                 WIDTH 8 PICTURE ""
+[LINE] 1
+Centro               WIDTH 8 PICTURE ""
+[LINE] 1
+Nombre               WIDTH 17 PICTURE ""
+[LINE] 1
+Tipo                 WIDTH 6 PICTURE ""
+[LINE] 1
+Material             PICTURE ""
+[LINE] 1
+Descripcion          WIDTH 36 PICTURE ""
+[LINE] 1
+TipoMat              WIDTH 9 PICTURE ""
+[LINE] 1
+Rubro                WIDTH 8 PICTURE ""
+[LINE] 1
+RubroDesc            WIDTH 11 PICTURE ""
+[LINE] 1
+SubRubro             WIDTH 10 PICTURE ""
+[LINE] 1
+SubRubroDesc         WIDTH 23 PICTURE ""
+[LINE] 1
+Grupo                WIDTH 11 PICTURE ""
+[LINE] 1
+GrupoDesc            WIDTH 16 PICTURE ""
+[LINE] 1
+Almacen              WIDTH 9 PICTURE ""
+[LINE] 1
+LibreUtil            WIDTH 9 PICTURE ""
+[LINE] 1
+Bloqueado            WIDTH 11 PICTURE ""
+[LINE] 1
+CtrlCalidad          WIDTH 11 PICTURE ""
+[LINE] 1
+Transito             WIDTH 9 PICTURE ""
+[LINE] 1
+Traslado             WIDTH 9 PICTURE ""
+[LINE] 1
+EntPendACentro       WIDTH 14 PICTURE ""
+[LINE] 1
+TransYTrasDeAlmOrig  WIDTH 18 PICTURE ""
+[LINE] 1
+EntPendCliInt        WIDTH 12 PICTURE ""
+[LINE] 1
+EntPendCliExt        WIDTH 13 PICTURE ""
+[LINE] 1
+EntPendTot           WIDTH 11 PICTURE ""
+[LINE] 1
+DisponibleVtaCentro  WIDTH 17 PICTURE ""
+[LINE] 1
+DisponibleVtaEmpresa WIDTH 18 PICTURE ""
+[LINE] 1
+DisponibleAlmCentro  WIDTH 18 PICTURE ""
+[LINE] 1
+DisponibleAlmEmpresa WIDTH 19 PICTURE ""
+[LINE] 1
+IngPlanifAntes30Dias WIDTH 17 PICTURE ""
+[LINE] 1
+IngPlanifUlt30Dias   WIDTH 16 PICTURE ""
+[LINE] 1
+IngPlanifProx30Dias  WIDTH 17 PICTURE ""
+[LINE] 1
+IngPlanifDesp30Dias  WIDTH 17 PICTURE ""
+^REPORT   Vista_predeterminada                                                Datos                                                             D,T.
+[SKIP] 0
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+Usu_Legacy           WIDTH 11 PICTURE ""
+[LINE] 1
+Cl_Legacy            WIDTH 10 PICTURE ""
+[LINE] 1
+Usu_SAP              WIDTH 9 PICTURE ""
+[LINE] 1
+Cl_SAP               WIDTH 10 PICTURE ""
+[LINE] 1
+Usu_REPO             WIDTH 10 PICTURE ""
+[LINE] 1
+Cl_REPO              WIDTH 10 PICTURE ""
+[LINE] 1
+megatone             WIDTH 10 PICTURE ""
+[LINE] 1
+confina              WIDTH 8 PICTURE ""
+[LINE] 1
+base_megatone        WIDTH 14 PICTURE ""
+[LINE] 1
+base_corefin         WIDTH 12 PICTURE ""
+[LINE] 1
+clientes_megatone    WIDTH 16 PICTURE ""
+[LINE] 1
+clientes_corefin     WIDTH 14 PICTURE ""
+[LINE] 1
+proveedores          WIDTH 12 PICTURE ""
+[LINE] 1
+musimundo            WIDTH 11 PICTURE ""
+[LINE] 1
+clientes_unificado   WIDTH 15 PICTURE ""
+[LINE] 1
+interfaz_sap         WIDTH 11 PICTURE ""
+[LINE] 1
+reposar              WIDTH 8 PICTURE ""
+^FORMAT   Datos                                                               Datos                                                             "" "Datos.FIL" 0  
+[PARENT_FOLDER_ID] 1593534508
+[LASTVIEW] "Vista_predeterminada"
+[RETRIEVE] 0
+[REFRESH] SOURCE "EXCEL FILES" TABLE "Datos$" QUALIFIER "F:\Mis Documentos\AUDITORIA OPERATIVA\SCRIPT\Biblioteca AX\Datos.xls" TO "Datos.FIL" WIDTH 50 MAXIMUM 100 FIELDS "Usu_Legacy","Cl_Legacy","Usu_SAP","Cl_SAP","Usu_REPO","Cl_REPO","megatone","confina","base_megatone","base_corefin","clientes_megatone","clientes_corefin","proveedores","musimundo","clientes_unificado","interfaz_sap","reposar"
+^REPORT   Vista_predeterminada                                                Movimientos                                                       D,T.
+[SKIP] 0
+[TLINES] 2
+[RLINES] 1
+[LINE] 1
+MKPF_MBLNR           WIDTH 24 PICTURE ""
+[LINE] 1
+MKPF_MJAHR           WIDTH 26 PICTURE ""
+[LINE] 1
+MKPF_VGART           WIDTH 19 PICTURE ""
+[LINE] 1
+MKPF_BLART           WIDTH 19 PICTURE ""
+[LINE] 1
+MKPF_BLAUM           WIDTH 30 PICTURE ""
+[LINE] 1
+MKPF_BLDAT           WIDTH 27 PICTURE ""
+[LINE] 1
+MKPF_BUDAT           WIDTH 30 PICTURE ""
+[LINE] 1
+MKPF_CPUDT           WIDTH 30 PICTURE ""
+[LINE] 1
+MKPF_CPUTM           WIDTH 19 PICTURE ""
+[LINE] 1
+MKPF_AEDAT           WIDTH 21 PICTURE ""
+[LINE] 1
+MKPF_USNAM           WIDTH 19 PICTURE ""
+[LINE] 1
+MKPF_TCODE           WIDTH 30 PICTURE ""
+[LINE] 1
+MKPF_XBLNR           WIDTH 28 PICTURE ""
+[LINE] 1
+MKPF_BKTXT           PICTURE ""
+[LINE] 1
+MKPF_XABLN           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_ZEILE           WIDTH 26 PICTURE ""
+[LINE] 1
+MSEG_LINE_ID         WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_PARENT_ID       WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_LINE_DEPTH      WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_MAA_URZEI       WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_BWART           WIDTH 28 PICTURE ""
+[LINE] 1
+MSEG_XAUTO           WIDTH 25 PICTURE ""
+[LINE] 1
+MSEG_MATNR           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_WERKS           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_LGORT           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_CHARG           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_INSMK           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_SOBKZ           WIDTH 21 PICTURE ""
+[LINE] 1
+MSEG_LIFNR           WIDTH 25 PICTURE ""
+[LINE] 1
+MSEG_KUNNR           WIDTH 23 PICTURE ""
+[LINE] 1
+MSEG_KDAUF           WIDTH 23 PICTURE ""
+[LINE] 1
+MSEG_KDPOS           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_KDEIN           WIDTH 20 PICTURE ""
+[LINE] 1
+MSEG_SHKZG           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_WAERS           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_DMBTR           PICTURE ""
+[LINE] 1
+MSEG_BWTAR           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_MENGE           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_MEINS           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_ERFMG           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_ERFME           WIDTH 23 PICTURE ""
+[LINE] 1
+MSEG_BPMNG           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_BPRME           WIDTH 27 PICTURE ""
+[LINE] 1
+MSEG_EBELN           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_EBELP           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_KOKRS           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_KOSTL           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_AUFNR           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_ANLN1           WIDTH 24 PICTURE ""
+[LINE] 1
+MSEG_ANLN2           WIDTH 20 PICTURE ""
+[LINE] 1
+MSEG_GJAHR           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_BUKRS           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_RSNUM           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_RSPOS           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_KZBEW           WIDTH 20 PICTURE ""
+[LINE] 1
+MSEG_KZVBR           WIDTH 22 PICTURE ""
+[LINE] 1
+MSEG_KZZUG           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_GRUND           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_PS_PSP_PNR      WIDTH 41 PICTURE ""
+[LINE] 1
+MSEG_NPLNR           WIDTH 26 PICTURE ""
+[LINE] 1
+MSEG_AUFPL           WIDTH 28 PICTURE ""
+[LINE] 1
+MSEG_APLZL           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_BSTMG           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_BSTME           WIDTH 23 PICTURE ""
+[LINE] 1
+MSEG_EXBWR           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_VKWRT           WIDTH 25 PICTURE ""
+[LINE] 1
+MSEG_EXVKW           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_LBKUM           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_SALK3           WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_VPRSV           WIDTH 24 PICTURE ""
+[LINE] 1
+MSEG_MAT_KDAUF       WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_MAT_KDPOS       WIDTH 30 PICTURE ""
+[LINE] 1
+MSEG_XMACC           WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_WRF_CHARSTC1    WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_WRF_CHARSTC2    WIDTH 19 PICTURE ""
+[LINE] 1
+MSEG_WRF_CHARSTC3    WIDTH 19 PICTURE ""
+[LINE] 1
+MARA_MATNR           WIDTH 19 PICTURE ""
+[LINE] 1
+MARA_MTART           WIDTH 19 PICTURE ""
+[LINE] 1
+MARA_MATKL           WIDTH 19 PICTURE ""
+[LINE] 1
+MARA_VOLUM           WIDTH 19 PICTURE ""
+[LINE] 1
+MAKT_MATNR           WIDTH 20 PICTURE ""
+[LINE] 1
+MAKT_MAKTX           WIDTH 24 PICTURE ""
+^FORMAT   Movimientos                                                         Movimientos                                                       "" "Movimientos.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 1593534508
+[RETRIEVE] 0
+[REFRESH] SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo               </d><u>macabrer    </u><c>300</c><lg>ES</lg><cf>Movimientos.fil</cf><sf>                                                                                                                                                                                                                                                               </sf><jcount>        </jcount><jname>                                </jname><dl>745 </dl><m>0</m><ws>0</ws><jw>0</jw><r>500</r><ar>1</ar><e>500</e><ts><t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLART</f><f>BLAUM</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>CPUTM</f><f>AEDAT</f><f>USNAM</f><f>TCODE</f><f>XBLNR</f><f>BKTXT</f><f>XABLN</f></fs><wc><w><f>CPUDT</f><o>6</o><l>20211201</l><h>20211209</h></w></wc></t><t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>ZEILE</f><f>LINE_ID</f><f>PARENT_ID</f><f>LINE_DEPTH</f><f>MAA_URZEI</f><f>BWART</f><f>XAUTO</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>CHARG</f><f>INSMK</f><f>SOBKZ</f><f>LIFNR</f><f>KUNNR</f><f>KDAUF</f><f>KDPOS</f><f>KDEIN</f><f>SHKZG</f><f>WAERS</f><f>DMBTR</f><f>BWTAR</f><f>MENGE</f><f>MEINS</f><f>ERFMG</f><f>ERFME</f><f>BPMNG</f><f>BPRME</f><f>EBELN</f><f>EBELP</f><f>KOKRS</f><f>KOSTL</f><f>AUFNR</f><f>ANLN1</f><f>ANLN2</f><f>GJAHR</f><f>BUKRS</f><f>RSNUM</f><f>RSPOS</f><f>KZBEW</f><f>KZVBR</f><f>KZZUG</f><f>GRUND</f><f>PS_PSP_PNR</f><f>NPLNR</f><f>AUFPL</f><f>APLZL</f><f>BSTMG</f><f>BSTME</f><f>EXBWR</f><f>VKWRT</f><f>EXVKW</f><f>LBKUM</f><f>SALK3</f><f>VPRSV</f><f>MAT_KDAUF</f><f>MAT_KDPOS</f><f>XMACC</f><f>WRF_CHARSTC1</f><f>WRF_CHARSTC2</f><f>WRF_CHARSTC3</f></fs><wc><w><f>LGORT</f><o>0</o><l>0001</l><h></h></w><w><f>WERKS</f><o>7</o><l>M*</l><h></h></w></wc></t><t><n>MARA</n><a>T00003</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f><f>MATKL</f><f>VOLUM</f></fs><wc><w><f>MTART</f><o>0</o><l>ZPRO</l><h></h></w><w><f>MTART</f><o>0</o><l>ZBLA</l><h></h></w><w><f>MTART</f><o>0</o><l>ZPVV</l><h></h></w></wc></t><t><n>MAKT</n><a>T00004</a><td>Textos breves de artículo</td><tt>1</tt><fs><f>MATNR</f><f>MAKTX</f></fs><wc><w><f>SPRAS</f><o>0</o><l>S</l><h></h></w></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc><jc><pt><pa>T00002</pa><pf>MATNR</pf></pt><ct><ca>T00003</ca><cf>MATNR</cf></ct></jc><jc><pt><pa>T00003</pa><pf>MATNR</pf></pt><ct><ca>T00004</ca><cf>MATNR</cf></ct></jc></js></q>
+^FORMAT   SituacionGeneralStock                                               SituacionGeneralStock                                             "" "SituacionGeneralStock.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 1593534508
+[LASTVIEW] "Vista_predeterminada"
+[RETRIEVE] 0
+[REFRESH] EXCEL "SituacionGeneralStock.fil" FROM "Z:\SituacionGeneralStock.xlsx" TABLE "SituacionGeneralStock$" KEEPTITLE FIELD "Zona" C WID 6 AS "" FIELD "Centro" C WID 4 AS "" FIELD "Nombre" C WID 30 AS "" FIELD "Tipo" C WID 1 AS "" FIELD "Material" N WID 6 DEC 0 AS "" FIELD "Descripcion" C WID 40 AS "" FIELD "TipoMat" C WID 4 AS "" FIELD "Rubro" C WID 3 AS "" FIELD "RubroDesc" C WID 23 AS "" FIELD "SubRubro" C WID 6 AS "" FIELD "SubRubroDesc" C WID 39 AS "" FIELD "Grupo" C WID 9 AS "" FIELD "GrupoDesc" C WID 20 AS "" FIELD "Almacen" C WID 4 AS "" FIELD "LibreUtil" N WID 4 DEC 0 AS "" FIELD "Bloqueado" N WID 3 DEC 0 AS "" FIELD "CtrlCalidad" N WID 1 DEC 0 AS "" FIELD "Transito" N WID 2 DEC 0 AS "" FIELD "Traslado" N WID 2 DEC 0 AS "" FIELD "EntPendACentro" N WID 3 DEC 0 AS "" FIELD "TransYTrasDeAlmOrig" N WID 2 DEC 0 AS "" FIELD "EntPendCliInt" N WID 3 DEC 0 AS "" FIELD "EntPendCliExt" N WID 2 DEC 0 AS "" FIELD "EntPendTot" N WID 3 DEC 0 AS "" FIELD "DisponibleVtaCentro" N WID 3 DEC 0 AS "" FIELD "DisponibleVtaEmpresa" N WID 4 DEC 0 AS "" FIELD "DisponibleAlmCentro" N WID 4 DEC 0 AS "" FIELD "DisponibleAlmEmpresa" N WID 4 DEC 0 AS "" FIELD "IngPlanifAntes30Dias" N WID 5 DEC 0 AS "" FIELD "IngPlanifUlt30Dias" N WID 3 DEC 0 AS "" FIELD "IngPlanifProx30Dias" N WID 3 DEC 0 AS "" FIELD "IngPlanifDesp30Dias" N WID 3 DEC 0 AS ""
 ^BATCH    S020_Importar                                                       
 [PARENT_FOLDER_ID] 1593534819
 SET SAFETY OFF
 
 COMM SituacionGeneralStock.xlsx
+COMM
+Stock Comercial = Libre Utilización + Pendiente a Centro + Transito y Traslado - Pendiente Desde Centro
+
+IMPORT EXCEL TO SituacionGeneralStock "SituacionGeneralStock.fil" FROM "Z:\SituacionGeneralStock.xlsx" TABLE "SituacionGeneralStock$" KEEPTITLE FIELD "Zona" C WID 6 AS "" FIELD "Centro" C WID 4 AS "" FIELD "Nombre" C WID 30 AS "" FIELD "Tipo" C WID 1 AS "" FIELD "Material" N WID 6 DEC 0 AS "" FIELD "Descripcion" C WID 40 AS "" FIELD "TipoMat" C WID 4 AS "" FIELD "Rubro" C WID 3 AS "" FIELD "RubroDesc" C WID 23 AS "" FIELD "SubRubro" C WID 6 AS "" FIELD "SubRubroDesc" C WID 39 AS "" FIELD "Grupo" C WID 9 AS "" FIELD "GrupoDesc" C WID 20 AS "" FIELD "Almacen" C WID 4 AS "" FIELD "LibreUtil" N WID 4 DEC 0 AS "" FIELD "Bloqueado" N WID 3 DEC 0 AS "" FIELD "CtrlCalidad" N WID 1 DEC 0 AS "" FIELD "Transito" N WID 2 DEC 0 AS "" FIELD "Traslado" N WID 2 DEC 0 AS "" FIELD "EntPendACentro" N WID 3 DEC 0 AS "" FIELD "TransYTrasDeAlmOrig" N WID 2 DEC 0 AS "" FIELD "EntPendCliInt" N WID 3 DEC 0 AS "" FIELD "EntPendCliExt" N WID 2 DEC 0 AS "" FIELD "EntPendTot" N WID 3 DEC 0 AS "" FIELD "DisponibleVtaCentro" N WID 3 DEC 0 AS "" FIELD "DisponibleVtaEmpresa" N WID 4 DEC 0 AS "" FIELD "DisponibleAlmCentro" N WID 4 DEC 0 AS "" FIELD "DisponibleAlmEmpresa" N WID 4 DEC 0 AS "" FIELD "IngPlanifAntes30Dias" N WID 5 DEC 0 AS "" FIELD "IngPlanifUlt30Dias" N WID 3 DEC 0 AS "" FIELD "IngPlanifProx30Dias" N WID 3 DEC 0 AS "" FIELD "IngPlanifDesp30Dias" N WID 3 DEC 0 AS ""
+
+OPEN SituacionGeneralStock
+
+
+COMM
+Movimientos
+SELECT
+  DISTINCT "MSEG"."ANLN1","MSEG"."ANLN2","MSEG"."APLZL","MSEG"."AUFNR",
+  "MSEG"."AUFPL","MKPF"."BKTXT","MKPF"."BLDAT","MSEG"."BPMNG","MSEG"."BPRME",
+  "MSEG"."BSTME","MSEG"."BSTMG","MKPF"."BUDAT","MSEG"."BUKRS","MSEG"."BWART",
+  "MSEG"."BWTAR","MSEG"."CHARG","MKPF"."CPUDT","MKPF"."CPUTM","MSEG"."DMBTR",
+  "MSEG"."EBELN","MSEG"."EBELP","MSEG"."ERFME","MSEG"."ERFMG","MSEG"."EXBWR",
+  "MSEG"."EXVKW","MSEG"."GRUND","MSEG"."KDAUF","MSEG"."KDEIN","MSEG"."KDPOS",
+  "MSEG"."KOSTL","MSEG"."KUNNR","MSEG"."KZBEW","MSEG"."KZVBR","MSEG"."KZZUG",
+  "MSEG"."LBKUM","MSEG"."LGORT","MSEG"."LIFNR","MSEG"."MATNR","MSEG"."MAT_KDAUF",
+  "MSEG"."MAT_KDPOS","MKPF"."MBLNR","MSEG"."MEINS","MSEG"."MENGE","MKPF"."MJAHR",
+  "MSEG"."NPLNR","MSEG"."PS_PSP_PNR","MSEG"."RSNUM","MSEG"."RSPOS",
+  "MSEG"."SALK3","MSEG"."SHKZG","MSEG"."SOBKZ","MKPF"."USNAM","MKPF"."VGART",
+  "MSEG"."VKWRT","MSEG"."VPRSV","MSEG"."WAERS","MSEG"."WERKS",
+  "MSEG"."WRF_CHARSTC1","MSEG"."WRF_CHARSTC2","MSEG"."WRF_CHARSTC3",
+  "MKPF"."XABLN","MSEG"."XAUTO","MKPF"."XBLNR","MSEG"."ZEILE","MSEG"."MAA_URZEI",
+  "MSEG"."XMACC"
+FROM
+  "MKPF" INNER JOIN "MSEG" ON "MKPF"."MANDT"="MSEG"."MANDT" AND "MKPF"."MANDT"="M
+  SEG"."MANDT" AND "MKPF"."MBLNR"="MSEG"."MBLNR" AND "MKPF"."MJAHR"="MSEG"."MJAHR
+  "
+WHERE
+  "MKPF"."MANDT"='300' AND "MSEG"."MATNR" IN ('000000000000107465') AND
+  "MKPF"."BUDAT" BETWEEN '20211209' AND '20211209' AND "MSEG"."LGORT"='0001'
+
+
+IMPORT SAP PASSWORD 1 TO Movimientos SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>Movimientos.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>745</dl><m>0</m><ws>0</ws><jw>0</jw><r>500</r><ar>1</ar><e>500</e><ts><t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLART</f><f>BLAUM</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>CPUTM</f><f>AEDAT</f><f>USNAM</f><f>TCODE</f><f>XBLNR</f><f>BKTXT</f><f>XABLN</f></fs><wc><w><f>CPUDT</f><o>6</o><l>%v_Desde%</l><h>%v_Hasta%</h></w></wc></t><t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>ZEILE</f><f>LINE_ID</f><f>PARENT_ID</f><f>LINE_DEPTH</f><f>MAA_URZEI</f><f>BWART</f><f>XAUTO</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>CHARG</f><f>INSMK</f><f>SOBKZ</f><f>LIFNR</f><f>KUNNR</f><f>KDAUF</f><f>KDPOS</f><f>KDEIN</f><f>SHKZG</f><f>WAERS</f><f>DMBTR</f><f>BWTAR</f><f>MENGE</f><f>MEINS</f><f>ERFMG</f><f>ERFME</f><f>BPMNG</f><f>BPRME</f><f>EBELN</f><f>EBELP</f><f>KOKRS</f><f>KOSTL</f><f>AUFNR</f><f>ANLN1</f><f>ANLN2</f><f>GJAHR</f><f>BUKRS</f><f>RSNUM</f><f>RSPOS</f><f>KZBEW</f><f>KZVBR</f><f>KZZUG</f><f>GRUND</f><f>PS_PSP_PNR</f><f>NPLNR</f><f>AUFPL</f><f>APLZL</f><f>BSTMG</f><f>BSTME</f><f>EXBWR</f><f>VKWRT</f><f>EXVKW</f><f>LBKUM</f><f>SALK3</f><f>VPRSV</f><f>MAT_KDAUF</f><f>MAT_KDPOS</f><f>XMACC</f><f>WRF_CHARSTC1</f><f>WRF_CHARSTC2</f><f>WRF_CHARSTC3</f></fs><wc><w><f>LGORT</f><o>0</o><l>0001</l><h></h></w><w><f>WERKS</f><o>7</o><l>M*</l><h></h></w></wc></t><t><n>MARA</n><a>T00003</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f><f>MATKL</f><f>VOLUM</f></fs><wc><w><f>MTART</f><o>0</o><l>ZPRO</l><h></h></w><w><f>MTART</f><o>0</o><l>ZBLA</l><h></h></w><w><f>MTART</f><o>0</o><l>ZPVV</l><h></h></w></wc></t><t><n>MAKT</n><a>T00004</a><td>Textos breves de artículo</td><tt>1</tt><fs><f>MATNR</f><f>MAKTX</f></fs><wc><w><f>SPRAS</f><o>0</o><l>S</l><h></h></w></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc><jc><pt><pa>T00002</pa><pf>MATNR</pf></pt><ct><ca>T00003</ca><cf>MATNR</cf></ct></jc><jc><pt><pa>T00003</pa><pf>MATNR</pf></pt><ct><ca>T00004</ca><cf>MATNR</cf></ct></jc></js></q>
+
+OPEN Movimientos
 
 
 
-
-
-COMM 
-IMPORT SAP PASSWORD 1 TO MKPF_MSEG SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>MKPF_MSEG.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>330</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>USNAM</f><f>XBLNR</f><f>LE_VBELN</f></fs><wc><w><f>CPUDT</f><o>6</o><l>%v_Desde%</l><h>%v_Hasta%</h></w><w><f>VGART</f><o>0</o><l>WE</l><h></h></w></wc></t><t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>ZEILE</f><f>LINE_ID</f><f>BWART</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>LIFNR</f><f>DMBTR</f><f>MENGE</f><f>EBELN</f><f>EBELP</f><f>GJAHR</f><f>BUKRS</f><f>BSTMG</f></fs><wc><w><f>BWART</f><o>6</o><l>101</l><h>102</h></w><w><f>LGORT</f><o>0</o><l>0001</l><h></h></w><w><f>WERKS</f><o>7</o><l>M*</l><h></h></w></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc></js></q>
-OPEN MKPF_MSEG
 
 COMM MKPF_MSEG_EKKO_EKPO_MARA_LFA1
 
@@ -977,31 +1486,6 @@ WHERE
  ) END_QUERY 
 OPEN ProveedorRegular
 END
-
-
-SET SAFETY ON
-^BATCH    S000_AX                                                             
-[PARENT_FOLDER_ID] 1593534819
-COMMENT
-//ANALYTIC ReporteIngresosStockVentas
-//RESULT LOG
-//RESULT TABLE 
-//RESULT FILE *.XLSX
-END
-
-SET SAFETY OFF
-
-SET FOLDER /Tablas
-
-DO S010_Inicializar 
-DO S020_Importar 
-DO S030_Preparar 
-DO S040_IngresosAcumulados 
-DO S050_IngresosDiaAnterior 
-DO S060_IngresosDetallado 
-DO S070_ResumenProv 
-DO S080_ResumenRubro
-DO S100_ArmarReporte
 
 
 SET SAFETY ON

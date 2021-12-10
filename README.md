@@ -19,7 +19,88 @@ Formato:
 
 
 Pasos
-1. IngresosEgresosTMP = Importar tablas MKPF - MSEG - EKPO - EKKO - MARA - LFA1
+1. SituacionGeneralStock = Importar archivo Z:\SituacionGeneralStock.xlsx
+
+2. Movimientos = Importar tablas MKPF - MSEG
+SELECT
+  DISTINCT 
+  "MSEG"."ANLN1",
+  "MSEG"."ANLN2",
+  "MSEG"."APLZL",
+  "MSEG"."AUFNR",
+  "MSEG"."AUFPL",
+  "MKPF"."BKTXT",
+  "MKPF"."BLDAT",
+  "MSEG"."BPMNG",
+  "MSEG"."BPRME",
+  "MSEG"."BSTME",
+  "MSEG"."BSTMG",
+  "MKPF"."BUDAT",
+  "MSEG"."BUKRS",
+  "MSEG"."BWART",
+  "MSEG"."BWTAR",
+  "MSEG"."CHARG",
+  "MKPF"."CPUDT",
+  "MKPF"."CPUTM",
+  "MSEG"."DMBTR",
+  "MSEG"."EBELN",
+  "MSEG"."EBELP",
+  "MSEG"."ERFME",
+  "MSEG"."ERFMG",
+  "MSEG"."EXBWR",
+  "MSEG"."EXVKW",
+  "MSEG"."GRUND",
+  "MSEG"."KDAUF",
+  "MSEG"."KDEIN",
+  "MSEG"."KDPOS",
+  "MSEG"."KOSTL",
+  "MSEG"."KUNNR",
+  "MSEG"."KZBEW",
+  "MSEG"."KZVBR",
+  "MSEG"."KZZUG",
+  "MSEG"."LBKUM",
+  "MSEG"."LGORT",
+  "MSEG"."LIFNR",
+  "MSEG"."MATNR",
+  "MSEG"."MAT_KDAUF",
+  "MSEG"."MAT_KDPOS",
+  "MKPF"."MBLNR",
+  "MSEG"."MEINS",
+  "MSEG"."MENGE",
+  "MKPF"."MJAHR",
+  "MSEG"."NPLNR",
+  "MSEG"."PS_PSP_PNR",
+  "MSEG"."RSNUM",
+  "MSEG"."RSPOS",
+  "MSEG"."SALK3",
+  "MSEG"."SHKZG",
+  "MSEG"."SOBKZ",
+  "MKPF"."USNAM",
+  "MKPF"."VGART",
+  "MSEG"."VKWRT",
+  "MSEG"."VPRSV",
+  "MSEG"."WAERS",
+  "MSEG"."WERKS",
+  "MSEG"."WRF_CHARSTC1",
+  "MSEG"."WRF_CHARSTC2",
+  "MSEG"."WRF_CHARSTC3",
+  "MKPF"."XABLN",
+  "MSEG"."XAUTO",
+  "MKPF"."XBLNR",
+  "MSEG"."ZEILE",
+  "MSEG"."MAA_URZEI",
+  "MSEG"."XMACC"
+FROM
+  "MKPF" 
+  INNER JOIN "MSEG" ON 
+             "MKPF"."MANDT"="MSEG"."MANDT" 
+        AND  "MKPF"."MBLNR"="MSEG"."MBLNR" 
+        AND  "MKPF"."MJAHR"="MSEG"."MJAHR"
+WHERE
+  "MKPF"."MANDT"='300' AND "MSEG"."MATNR" IN ('000000000000107465') AND
+  "MKPF"."BUDAT" BETWEEN '20211209' AND '20211209' AND "MSEG"."LGORT"='0001'
+
+
    # MKPF AS T00001:Cabecera de doc.artículo
     Campos:
         MBLNR MJAHR VGART BLDAT BUDAT CPUDT USNAM XBLNR LE_VBELN
