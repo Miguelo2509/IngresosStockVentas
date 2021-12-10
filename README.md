@@ -7,15 +7,15 @@ Acá lo que queremos ver son los “movimientos” diarios del stock. ¿Será po
 Stock Comercial = Libre Utilización + Pendiente a Centro + Transito y Traslado - Pendiente Desde Centro
 
 Necesito: 
-        - Venta a costo de reposición.
-        - Stock Comercial al Inicio.
+- Venta a costo de reposición.
+- Stock Comercial al Inicio.
 
 Formato:
+Ingresos UN	Stock Comerial UN	Venta UN	Operación UN	Ingresos $	Stock Comerial $	Venta $	Operación $
 
-| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+| ----------- | ----------- | ----------- | ----------- | ----------- |----------- |----------- |----------- |----------- |
+| Fecha | Ingresos UN | Stock Comerial UN | Venta UN | Operación UN | Ingresos $ | Stock Comerial $ | Venta $ | Operación $|
+| ----------- | ----------- | ----------- | ----------- | ----------- |----------- |----------- |----------- |----------- |
 
 ---
 
