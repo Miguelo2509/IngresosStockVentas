@@ -12,7 +12,7 @@ Necesito:
 
 Formato:
 
-| Fecha | Ingresos UN | Stock Comerial UN | Venta UN | Operación UN | Ingresos $ | Stock Comerial $ | Venta $ | Operación $|
+| Fecha | Stock Comerial UN | Ingresos UN | Egresos UN | Operación UN | Stock Comerial $ | Ingresos $ | Egresos $ | Operación $|
 | ----------- | ----------- | ----------- | ----------- | ----------- |----------- |----------- |----------- |----------- |
 
 ---
